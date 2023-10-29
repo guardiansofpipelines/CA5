@@ -36,7 +36,7 @@ pipeline {
             steps {
                 script {
                     // Ensure the docker-compose.yaml file is in the current workspace
-                    sh 'cp E:/Study/7th Semester/MLOps/CA5/docker-compose.yml ./docker-compose.yml'
+                    sh 'cp /path/to/your/docker-compose.yaml ./docker-compose.yaml'
                 }
                 // Build and run the Docker Compose services
                 sh 'docker-compose up -d'
