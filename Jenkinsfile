@@ -1,21 +1,11 @@
-pipeline{
+pipeline {
     agent any
-    stages{
-        stage('Build'){
-            steps{
-                echo 'Building the app'
-            }
-        }
-        stage('Test'){
-            steps{
-                echo 'Testing the app'
-            }
-        }
-        stage('Deploy'){
-            steps{
-                echo 'Deploying the app'
+    stages {
+        stage('Build and Publish Web Service Docker Image') {
+            steps {
+                sh 'docker build -t mywebservice:latest .'
+                sh 'docker push mywebservice:latest'
             }
         }
     }
-    
 }
