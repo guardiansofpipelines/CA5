@@ -1,0 +1,28 @@
+version: '3'  # Use the desired Docker Compose version
+
+services:
+
+  # Web Server (flask)
+  web:
+    build: .  # Build the Dockerfile in the web directory
+    ports:
+      - "5000:5000"  # Map host port 5000 to container port 5000
+    links:
+      - db  # Link the web container to the database container
+    depends_on:
+      db:
+        condition: service_healthy  # Wait for the 'db' service to be healthy
+  # Database (MySQL)
+  db:
+    build: 
+      context: .
+      dockerfile: DBDockerfile
+    ports:
+      - "3306:3306"  # Map host port 3306 to container port 3306
+    volumes:
+      - ./src/Database/init.sql:/docker-entrypoint-initdb.d/init.sql  # Mount a local directory for MySQL data storage
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 10s
+      retries: 5    

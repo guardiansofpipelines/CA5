@@ -1,0 +1,10 @@
+FROM mysql:8.0
+
+ENV MYSQL_ROOT_PASSWORD=1328
+ENV MYSQL_DATABASE=myca4
+
+EXPOSE 3306
+
+# Copy an SQL script to initialize the database 
+ADD src/Database/init.sql /docker-entrypoint-initdb.d/
+
