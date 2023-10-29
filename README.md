@@ -1,5 +1,5 @@
-[![main workflow](https://github.com/guardiansofpipelines/CA4/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/guardiansofpipelines/CA4/actions/workflows/main.yml)
-# CA4
+[![main workflow](https://github.com/guardiansofpipelines/CA5/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/guardiansofpipelines/CA5/actions/workflows/main.yml)
+# CA5
 
 ## For Windows
 ### create a virtual environment

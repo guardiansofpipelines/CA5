@@ -10,7 +10,8 @@ instance/
 # IDE files
 .vscode/
 .idea/
-
+# ignore ca5 folder
+ca5/
 # Logs
 logs/
 *.log
