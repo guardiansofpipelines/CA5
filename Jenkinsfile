@@ -23,15 +23,6 @@ pipeline {
             }
         }
 
-        stage('Build and Push Docker Image') {
-            steps {
-                script {
-                    // Build MySQL Docker image
-                    docker.build("my-mysql-image:${env.BUILD_NUMBER}")
-                }
-            }
-        }
-
         stage('Build and Run Docker Compose') {
             steps {
                 script {
